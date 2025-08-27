@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Website</title>
+
+  <!-- Bootstrap CSS (your local file, as in your code) -->
+  <link rel="stylesheet" href="bootstrap.css">
+
+  <!-- Your JS (left here as in your original code; logic is wrapped in DOMContentLoaded) -->
+  <script src="script.js"></script>
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- (kept exactly as you had it) bootstrap CDN duplicated include -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <button id="sidebarIcon" class="sidebar-icon" aria-label="Open sidebar">☰</button>
+        <a class="navbar-brand logo-text" href="#home">☕ Coffee</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#home" class="nav-link"> Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"> About</a></li>
+
+          <!-- This is the trigger for the SIDE MENU (kept in your list) -->
+          <li class="nav-item">
+            <a href="javascript:void(0)" id="openSidebar" class="nav-link" aria-label="Open menu"> Menu</a>
+          </li>
+
+          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"> Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SIDE MENU (new, minimal markup) -->
+   <div>
+  <aside id="sideMenu" class="side-menu" aria-hidden="true">
+    <div>
+    <h5 class="sideMenu-h3">☕Coffee</h5>
+    </div>
+    <button id="closeSidebar" class="side-close" aria-label="Close menu">×</button>
+    <ul class="list-unstyled m-0 p-0">
+      <li><a href="#home" class="side-link">Home</a></li>
+      <li><a href="#about" class="side-link">About</a></li>
+      <li><a href="#menu" class="side-link">Menu</a></li>
+      <li><a href="#testimonials" class="side-link">Testimonials</a></li>
+      <li><a href="#gallery" class="side-link">Gallery</a></li>
+      <li><a href="#contact" class="side-link">Contact</a></li>
+    </ul>
+  </aside>
+  <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+  <!-- /SIDE MENU -->
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h5>Best Coffee</h5>
+        <h1>"Make your day great with our special coffee!"</h1>
+        <p>Welcome to our coffee paradise where every bean tells a story and every cup sparks joy.</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-warning">Order Now</a>
+          <a href="#contact" class="btn btn-outline-light">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <!-- fixed path: images folder inside your Coffee project -->
+        <img src="images/coffee-hero-section.png" alt="Coffee Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container text-center">
+      <h2>About Us</h2>
+      <p>
+        Welcome to Brew Bliss – your perfect spot for freshly brewed coffee, cozy vibes,
+        and delicious treats. Our passion is to serve high-quality coffee made from the
+        finest beans, roasted to perfection. Whether you’re here to start your day, catch
+        up with friends, or simply relax, we promise a delightful experience in every sip.
+      </p>
+      <p>
+        From classic espresso to creative blends, we believe coffee is more than a drink –
+        it's a moment of happiness. Come and enjoy the aroma, taste, and warmth at Brew Bliss.
+      </p>
+      <!-- Use your dedicated about image -->
+      <img src="images/about-image.jpg" alt="About Image">
+    </div>
+  </section>
+
+  <!-- MENU (kept three items as requested) -->
+  <section id="menu" class="menu">
+    <div class="container text-center">
+      <h2>Our Menu</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="images/hot-beverages.png" alt="Hot Beverages" class="menu-img">
+          <h4>Hot Beverages</h4>
+          <p>Classic coffees served hot and fresh.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/cold-beverages.png" alt="Cold Beverages" class="menu-img">
+          <h4>Cold Beverages</h4>
+          <p>Chilled delights for a refreshing break.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/refreshment.png" alt="Refreshments" class="menu-img">
+          <h4>Refreshments</h4>
+          <p>Light, tasty sips to lift your mood.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (kept your section; only added IDs/controls for slider) -->
+  <section id="testimonials" class="testimonials">
+    <div class="container text-center">
+      <h2>Testimonials</h2>
+
+      <!-- Your original row becomes the slider track via CSS/JS (ID added) -->
+      <div class="row" id="testimonialRow">
+        <div class="col-md-4">
+          <div class="t-card">
+            <img src="images/user-1.jpg" alt="User 1" class="t-avatar">
+            <blockquote>"Best coffee I’ve ever had!"</blockquote>
+            <p class="t-name">— Customer 1</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="t-card">
+            <img src="images/user-2.jpg" alt="User 2" class="t-avatar">
+            <blockquote>"Amazing taste and atmosphere!"</blockquote>
+            <p class="t-name">— Customer 2</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="t-card">
+            <img src="images/user-3.jpg" alt="User 3" class="t-avatar">
+            <blockquote>"Friendly staff and great service."</blockquote>
+            <p class="t-name">— Customer 3</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- slider controls (added) -->
+      <div class="t-controls">
+        <button class="t-prev" aria-label="Previous">‹</button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="container text-center">
+      <h2>Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><img src="images/gallery-1.jpg" alt="Gallery Image 1" class="gallery-img"></div>
+        <div class="col-md-4"><img src="images/gallery-2.jpg" alt="Gallery Image 2" class="gallery-img"></div>
+        <div class="col-md-4"><img src="images/gallery-3.jpg" alt="Gallery Image 3" class="gallery-img"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container text-center">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" class="form-control mb-2">
+        <input type="email" placeholder="Your Email" class="form-control mb-2">
+        <textarea placeholder="Your Message" class="form-control mb-2"></textarea>
+        <button type="submit" class="btn btn-warning">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3">
+    <p>&copy; 2025 Coffee Shop. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

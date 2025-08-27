@@ -1,0 +1,251 @@
+/* Importing Google Fonts (kept) */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Poppins",sanserif;
+}
+
+:root{
+  /* colors  */
+  --white-color: #fff;
+  --dark-color: #252525;
+  --primary-color: #3b141c;
+  --secodary-color: #f3961c;
+  --light-pink-color: #faf4f5;
+  --medium-gray-color: #cccc;
+
+  /* font size  */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+
+  /* font weight  */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border radius  */
+  --border-radius-s:8px;
+  --border-radius-m:30px;
+  --border-radius-ciricle:50%;
+   
+  /* Site max width  */
+  --site-max-width:1300px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+
+header {
+  background: var(--primary-color);
+  padding: 15px 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  color: white !important;
+  text-decoration: none;
+}
+.logo-text:hover{
+  color: #e4aa2f!important;
+}
+
+.nav-link {
+  color: white !important;
+  margin: 0 10px;
+  padding: 8px 15px; 
+  border-radius: 50px;        /* oval corners */
+  transition: all 0.3s ease; 
+}
+.nav-link:hover {
+  background-color: #e4aa2f;  /* background color on hover */
+  color: white;              /* text color on hover */
+  text-decoration: none;      /* remove underline if any */
+  transform: scale(1.05); 
+}
+
+.hero {
+  background: var(--primary-color);
+  color: white;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+}
+
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.hero-content:hover{
+    color: #e4aa2f !important;
+}
+
+.hero-buttons .btn {
+  margin-right: 10px;
+}
+
+.about, .menu, .testimonials, .gallery, .contact {
+  padding: 60px 20px;
+  background: white;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.about:hover,
+.menu:hover,
+.testimonials:hover,
+.gallery:hover,
+.contact:hover {
+  color: rgb(71, 61, 61) !important;
+  background-color: #f0f0f0; /* light background */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ---------- SMALL HELPERS FOR YOUR IMAGES ---------- */
+.hero-img img { max-width: 420px; width: 100%; height: auto; }
+.menu-img, .gallery-img { width: 100%; height: auto; border-radius: 10px; }
+.t-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 8px; }
+.t-card { background: #fff; border-radius: 10px; padding: 18px; height: 100%; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+.t-name { margin-top: 8px; color: #666; font-size: .95rem; }
+
+/* ---------- NEW: SIDE MENU (slides from left) ---------- */
+
+.side-menu{
+  position: fixed;
+  top: 0;
+  left: -280px;              /* hidden state */
+  width: 260px;
+  height: 100vh;
+  background: ##3b141c;
+  box-shadow: 8px 0 24px rgba(0,0,0,.15);
+  padding: 70px 18px 20px;
+  transition: left .35s ease;
+  z-index: 1001;
+}
+.side-menu.open{ left: 0; }
+.side-close{
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  font-size: 32px;
+  line-height: 1;
+  color: #f8f4f4;
+  cursor: pointer;
+}
+.side-close:hover{
+    color:#e4aa2f!important;   
+}
+.side-link{
+  display: block;
+  padding: 12px 10px;
+  margin-bottom: 6px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background .2s;
+}
+/* Sidebar header text */
+.sideMenu-h3 {
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  margin: 0;
+  font-size: 1.5rem;  /* optional, adjust size */
+}
+.sideMenu-h3:hover{
+    color:#e4aa2f!important;
+}
+/* Sidebar top-left icon in header */
+.sidebar-icon {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.sidebar-icon:hover{
+    color:#e4aa2f!important;
+}
+@media (max-width: 992px) {
+  .sidebar-icon {
+    margin-right: 0;
+  }
+}
+
+.side-link:hover{ background: #e4aa2f; }
+
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+  z-index: 1000;
+}
+.overlay.show{ opacity: 1; visibility: visible; }
+
+/* ---------- NEW: TESTIMONIALS SLIDER (uses your existing row) ---------- */
+#testimonialRow{
+  display: flex;            /* turn the row into a track */
+  flex-wrap: nowrap;        /* no wrapping */
+  transition: transform .5s ease;
+}
+#testimonialRow > [class*="col-"]{
+  flex: 0 0 100%;           /* each slide takes full width */
+  max-width: 100%;
+  padding: 0 12px;          /* retain a little gutter look */
+}
+
+/* controls */
+.t-controls{
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.t-prev, .t-next{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+.t-dots{ display: flex; gap: 6px; align-items: center; }
+.t-dots button{
+  width: 8px; height: 8px; border-radius: 50%; border: 0;
+  background: #c7c7c7; cursor: pointer;
+}
+.t-dots button.active{ background: var(--primary-color); }
+
+/* responsive tweak so hero stacks on narrow screens */
+@media (max-width: 992px){
+  .hero-content{ flex-direction: column; text-align: center; }
+}
